@@ -34,15 +34,15 @@ if (CURL_FOUND)
     add_definitions(-DHAVE_CURL)
 endif()
 
-file(GLOB_RECURSE tgbotHeaders "SpotifyBot/dependencies/tgbot-cpp/include/tgbot/*.h")
-file(GLOB_RECURSE tgbotNetHeaders "SpotifyBot/dependencies/tgbot-cpp/include/tgbot/net/*.h")
-file(GLOB_RECURSE tgbotToolsHeaders "SpotifyBot/dependencies/tgbot-cpp/include/tgbot/tools/*.h")
-file(GLOB_RECURSE tgbotTypesHeaders "SpotifyBot/dependencies/tgbot-cpp/include/tgbot/types/*.h")
+file(GLOB_RECURSE tgbotHeaders "${CMAKE_PROJECT_DIR}SpotifyBot/dependencies/tgbot-cpp/include/tgbot/*.h")
+file(GLOB_RECURSE tgbotNetHeaders "${CMAKE_PROJECT_DIR}SpotifyBot/dependencies/tgbot-cpp/include/tgbot/net/*.h")
+file(GLOB_RECURSE tgbotToolsHeaders "${CMAKE_PROJECT_DIR}SpotifyBot/dependencies/tgbot-cpp/include/tgbot/tools/*.h")
+file(GLOB_RECURSE tgbotTypesHeaders "${CMAKE_PROJECT_DIR}SpotifyBot/dependencies/tgbot-cpp/include/tgbot/types/*.h")
 
-file(GLOB_RECURSE tgbotSrc "SpotifyBot/dependencies/tgbot-cpp/src/*.cpp")
-file(GLOB_RECURSE tgbotNetSrc "SpotifyBot/dependencies/tgbot-cpp/src/net/*.cpp")
-file(GLOB_RECURSE tgbotToolsSrc "SpotifyBot/dependencies/tgbot-cpp/src/tools/*.cpp")
-file(GLOB_RECURSE tgbotTypesSrc "SpotifyBot/dependencies/tgbot-cpp/src/types/*.cpp")
+file(GLOB_RECURSE tgbotSrc "${CMAKE_PROJECT_DIR}SpotifyBot/dependencies/tgbot-cpp/src/*.cpp")
+file(GLOB_RECURSE tgbotNetSrc "${CMAKE_PROJECT_DIR}SpotifyBot/dependencies/tgbot-cpp/src/net/*.cpp")
+file(GLOB_RECURSE tgbotToolsSrc "${CMAKE_PROJECT_DIR}SpotifyBot/dependencies/tgbot-cpp/src/tools/*.cpp")
+file(GLOB_RECURSE tgbotTypesSrc "${CMAKE_PROJECT_DIR}SpotifyBot/dependencies/tgbot-cpp/src/types/*.cpp")
 
 add_library(
 	tgbot
@@ -57,10 +57,10 @@ add_library(
 	${tgbotTypesSrc}
 )
 
-file(GLOB_RECURSE jsoncppLib "SpotifyBot/dependencies/vcpkg/installed/x64-linux/lib/libjsoncpp.a")
+file(GLOB_RECURSE jsoncppLib "${CMAKE_PROJECT_DIR}SpotifyBot/dependencies/vcpkg/installed/x64-linux/lib/libjsoncpp.a")
 
-file(GLOB_RECURSE headerFiles "/SpotifyBot/*.h")
-file(GLOB_RECURSE sourceFiles "/SpotifyBot/*.cpp")
+file(GLOB_RECURSE headerFiles "/${CMAKE_PROJECT_DIR}SpotifyBot/*.h")
+file(GLOB_RECURSE sourceFiles "/${CMAKE_PROJECT_DIR}SpotifyBot/*.cpp")
 
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(JSONCPP jsoncpp)
