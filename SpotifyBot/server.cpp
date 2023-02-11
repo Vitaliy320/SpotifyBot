@@ -46,7 +46,7 @@ void startTelegramBot() {
 
 void startServer(){
     io_service service;
-    ip::tcp::endpoint endpoint(ip::tcp::v4(), 8080);
+    ip::tcp::endpoint endpoint(ip::tcp::v4(), 8081);
     ip::tcp::acceptor acceptor(service, endpoint);
 
     std::cout << "Server started" << std::endl;
